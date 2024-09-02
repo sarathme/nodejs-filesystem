@@ -1,10 +1,19 @@
 # Node File System task
 
 Postman Docs:
-[Click Here](https://documenter.getpostman.com/view/16657839/2sAXjM4rZT#7c58913d-e465-4cde-b147-9cea6861a51d)
+[Postman Published Docs](https://documenter.getpostman.com/view/16657839/2sAXjM4rZT#7c58913d-e465-4cde-b147-9cea6861a51d)
 
 Deployed Render URI:
 [https://nodejs-filesystem-sarasraman.onrender.com](https://nodejs-filesystem-sarasraman.onrender.com)
+
+Deployed URI for creating a new file:
+[https://nodejs-filesystem-sarasraman.onrender.com/create-file](https://nodejs-filesystem-sarasraman.onrender.com/create-file)
+
+Deployed URI for reading files:
+[https://nodejs-filesystem-sarasraman.onrender.com/read-files](https://nodejs-filesystem-sarasraman.onrender.com/read-files)
+
+Deployed URI for removing all files:
+[https://nodejs-filesystem-sarasraman.onrender.com/remove-files](https://nodejs-filesystem-sarasraman.onrender.com/remove-files)
 
 ## Creating a results directory
 
