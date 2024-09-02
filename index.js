@@ -22,6 +22,10 @@ fs.mkdir(path.join(__dirname, "results"), { recursive: true }, (err) => {
   console.log("Directory created successfully");
 });
 
+app.get("/", (req, res) => {
+  res.redirect("/read-files");
+});
+
 // Create a API endpoint to create a file in results directory
 
 app.get("/create-file", (req, res) => {
@@ -47,9 +51,11 @@ app.get("/create-file", (req, res) => {
     }
 
     // Sending response to the client
-    res
-      .status(200)
-      .json({ status: "success", message: "File Created successfully" });
+    res.status(200).json({
+      status: "success",
+      message: "File Created successfully",
+      createdFile: fileName + ".txt",
+    });
   });
 });
 
@@ -74,6 +80,23 @@ app.get("/read-files", (req, res) => {
     // Sending response to client with the names of the files in files directory as an array.
 
     res.status(200).json({ status: "success", files: files });
+  });
+});
+
+app.get("/remove-files", (req, res) => {
+  const dirPath = path.join(__dirname, "results");
+
+  fs.readdir(dirPath, (err, data) => {
+    data.forEach((file) => {
+      const filePath = path.join(dirPath, file);
+      fs.unlinkSync(filePath);
+    });
+
+    res.status(200).json({
+      status: "success",
+      message: "All files deleted successfully",
+      deletedFiles: data,
+    });
   });
 });
 
